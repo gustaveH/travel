@@ -1,12 +1,13 @@
 import React from 'react';
 import './TourList.scss';
+import Tour from '../Tour/Tour';
 
 class TourList extends React.Component {
   render() {
     return (
-      <div>
-        <h1>Tourlist</h1>
-      </div>
+      <section>
+        <Tour />
+      </section>
     );
   }
 }
