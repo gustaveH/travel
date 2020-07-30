@@ -8,6 +8,15 @@ class TourList extends React.Component {
     tours: tourData,
   };
 
+  removeTour = (id) => {
+    const { tours } = this.state;
+    // filter loops through array and applies to each item inarray
+    const sortedTours = tours.filter((tour) => tour.id !== id);
+    this.setState({
+      tours: sortedTours,
+    });
+  };
+
   render() {
     //makes it easier to access the tours array using jsx
     const { tours } = this.state;
@@ -16,7 +25,9 @@ class TourList extends React.Component {
         {/* Looped through the tourData array and use map and use callback function */}
 
         {tours.map((tour) => {
-          return <Tour key={tour.id} tour={tour} />;
+          return (
+            <Tour key={tour.id} tour={tour} removeTour={this.removeTour} />
+          );
         })}
       </section>
     );

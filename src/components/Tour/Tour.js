@@ -12,12 +12,18 @@ class Tour extends React.Component {
     });
   };
   render() {
-    const { city, img, name, info } = this.props.tour;
+    const { id, city, img, name, info } = this.props.tour;
+    const { removeTour } = this.props;
     return (
       <article className='tour'>
         <div className='image-container'>
           <img src={img} alt='' />
-          <span className='close-btn'>
+          <span
+            className='close-btn'
+            onClick={() => {
+              removeTour(id);
+            }}
+          >
             <i>
               <FaWindowClose className='window-close' />
             </i>
