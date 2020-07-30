@@ -3,14 +3,20 @@ import './Tour.scss';
 import { FaWindowClose, FaCaretSquareDown } from 'react-icons/fa';
 
 class Tour extends React.Component {
+  state = {
+    showInfo: false,
+  };
+  handleInfo = () => {
+    this.setState({
+      showInfo: !this.state.showInfo,
+    });
+  };
   render() {
+    const { city, img, name, info } = this.props.tour;
     return (
       <article className='tour'>
         <div className='image-container'>
-          <img
-            src='https://images.pexels.com/photos/41178/africa-animal-big-carnivore-41178.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'
-            alt=''
-          />
+          <img src={img} alt='' />
           <span className='close-btn'>
             <i>
               <FaWindowClose className='window-close' />
@@ -18,18 +24,15 @@ class Tour extends React.Component {
           </span>
         </div>
         <div className='tour-info'>
-          <h3>City</h3>
-          <h4>Name</h4>
+          <h3>{city}</h3>
+          <h4>{name}</h4>
           <h5>
             info{' '}
-            <span>
+            <span onClick={this.handleInfo}>
               <FaCaretSquareDown />
             </span>
           </h5>
-          <p>
-            Cupidatat nostrud sint exercitation anim in. Sit reprehenderit
-            exercitation do Lorem consectetur cillum elit cillum labore minim.
-          </p>
+          {this.state.showInfo && <p>{info}</p>}
         </div>
       </article>
     );

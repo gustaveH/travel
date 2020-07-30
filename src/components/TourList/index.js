@@ -9,9 +9,12 @@ class TourList extends React.Component {
   };
 
   render() {
+    //makes it easier to access the tours array using jsx
     const { tours } = this.state;
     return (
       <section className='tourlist'>
+        {/* Looped through the tourData array and use map and use callback function */}
+
         {tours.map((tour) => {
           return <Tour key={tour.id} tour={tour} />;
         })}

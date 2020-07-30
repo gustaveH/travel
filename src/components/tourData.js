@@ -49,9 +49,17 @@ export const tourData = [
   },
   {
     id: 7,
-    city: 'georgia',
-    img: './img/georgia.jpeg',
+    city: 'atlanta',
+    img: './img/atlanta.jpeg',
     name: 'Atlanta skyline tour',
+    info:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel,repellendus!',
+  },
+  {
+    id: 8,
+    city: 'nairobi',
+    img: './img/nairobi.jpeg',
+    name: 'views from Nairobi',
     info:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel,repellendus!',
   },
