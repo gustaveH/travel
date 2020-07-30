@@ -19,7 +19,7 @@ class Tour extends React.Component {
         </div>
         <div className='tour-info'>
           <h3>City</h3>
-          <h3>Name</h3>
+          <h4>Name</h4>
           <h5>
             info{' '}
             <span>

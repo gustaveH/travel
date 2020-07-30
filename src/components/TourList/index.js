@@ -3,6 +3,10 @@ import './TourList.scss';
 import Tour from '../Tour/Tour';
 
 class TourList extends React.Component {
+  state = {
+    tours: [],
+  };
+
   render() {
     return (
       <section className='tourlist'>
