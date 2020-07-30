@@ -1,16 +1,20 @@
 import React from 'react';
 import './TourList.scss';
 import Tour from '../Tour/Tour';
+import { tourData } from '../tourData';
 
 class TourList extends React.Component {
   state = {
-    tours: [],
+    tours: tourData,
   };
 
   render() {
+    const { tours } = this.state;
     return (
       <section className='tourlist'>
-        <Tour />
+        {tours.map((tour) => {
+          return <Tour key={tour.id} tour={tour} />;
+        })}
       </section>
     );
   }
