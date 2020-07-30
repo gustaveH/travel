@@ -5,7 +5,7 @@ import Tour from '../Tour/Tour';
 class TourList extends React.Component {
   render() {
     return (
-      <section>
+      <section className='tourlist'>
         <Tour />
       </section>
     );
